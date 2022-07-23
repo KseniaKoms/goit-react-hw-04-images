@@ -15,7 +15,6 @@ const App = () => {
   const [page, setPage] = useState(1);
   const [images, setImages] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
-  const [error, setError] = useState('');
   const [largeImg, setLargeImg] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [tags, setTags] = useState('');
@@ -37,7 +36,7 @@ const App = () => {
           toast.error(`${searchValue} was not found`);
         }
       } catch (error) {
-        setError(error);
+        console.log(error.message);
       }
     };
     searchImages();
